@@ -1,8 +1,8 @@
 URL=https://sheriff.knoxcountytn.gov/ 
-FILE=website_$(date +%d%m%y).html
+FILE=$(date +%d%m%y)_$(echo "$URL" | sed 's|^http://||; s|^https://||; s|[/:?&=<>]|_|g').html
 
 # get the webpage and store it
-curl $URL > $FILE
+curl "$URL" > "$FILE"
 
 
 # search for keywords
