@@ -19,7 +19,8 @@ those files can be kept by deleting that lines or commenting out with `#`.
 Program stores curled file as html, based on url and date.  
   
 ## example usage and output
-```./curlsearch.sh https://lichess.org/ chess
+```
+./curlsearch.sh https://lichess.org/ chess
   % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
                                  Dload  Upload  Total   Spent   Left   Speed
 100  33896 100  33896   0      0  56645      0                              0
