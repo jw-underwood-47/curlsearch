@@ -18,7 +18,7 @@ The first argument after the script is the url to download.
 Subsequent arguments are search terms.
 As of right now, they are all case sensitive.
 This can be changed by replacing `grep` with
-`grep -i` in line 16 of the script.  
+`grep -i` where `grep` appears in the script.  
 Likewise, searches use regular expressions; this may cause unexpected behavior
 if your search term includes characters such as `.`.
 This behavior can be changed by adding ` -F` after `grep`,
