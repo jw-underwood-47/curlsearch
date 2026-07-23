@@ -12,7 +12,8 @@ DAY=$(date +%Y%m%d%H)
 FILE="$DAY"_$(printf "%s" "$URL" | sed 's|^http://||; s|^https://||; s|[/:?&=<>]|_|g').html
 
 # get the webpage and store it; exit if it fails
-curl -f "$URL" > "$FILE" || { printf "error downloading URL\n"; exit 1; }
+curl -fL --max-redirs=1 --proto-redir=https "$URL" > "$FILE" \
+|| { printf "error downloading URL\n"; exit 1; }
 
 # flush the input url from list of arguments
 shift
