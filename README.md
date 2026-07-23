@@ -4,8 +4,13 @@ For when you want to download a webpage and look for stuff
 ## install/setup
 The only file you actually need if you are just using it yourself is
 curlsearch.sh, which you can copy into a file on your machine.  
-Once you have that, you may need to run `chmod +x curlsearch.sh` to make it
-executable.  
+You may want to do this in a separate folder to hold the saved webpages, i.e.
+```
+mkdir curlsearch
+cd curlsearch
+```
+and copy `curlsearch.sh` there.
+Once you have that, run `chmod +x curlsearch.sh` to make it executable.  
   
 ## usage
 ```./curlsearch.sh URL TERM1 [TERM2] [ETC] ```

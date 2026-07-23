@@ -1,5 +1,6 @@
 URL=https://sheriff.knoxcountytn.gov/ 
-FILE=$(date +%d%m%y%H)_$(echo "$URL" | sed 's|^http://||; s|^https://||; s|[/:?&=<>]|_|g').html
+DAY=$(date +%Y%m%d%H)
+FILE="$DAY"_$(printf "%s" "$URL" | sed 's|^http://||; s|^https://||; s|[/:?&=<>]|_|g').html
 
 # get the webpage and store it
 curl "$URL" > "$FILE"
@@ -8,4 +9,6 @@ curl "$URL" > "$FILE"
 # search for keywords
 SEARCHFILE=holds.txt
 grep -i "HOLD" "$FILE" > $SEARCHFILE
-echo -n $(cat "$SEARCHFILE" | wc -l); echo " holds"
+printf "%s instances\n" "$(wc -l < "$SEARCHFILE")"
+# optional cleanup to remove text files -- delete if not wanted
+rm -- "$SEARCHFILE"
