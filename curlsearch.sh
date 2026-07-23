@@ -21,7 +21,7 @@ shift
 for term in "$@"; do
     printf " %s " "$term"
     SEARCHFILE=temp_"$term".txt
-    grep "$term" "$FILE" > "$SEARCHFILE"
+    grep -n -- "$term" "$FILE" > "$SEARCHFILE"
     printf "%s instances\n" "$(wc -l < "$SEARCHFILE")"
     # optional cleanup to remove text files -- delete if not wanted
     rm -- "$SEARCHFILE"

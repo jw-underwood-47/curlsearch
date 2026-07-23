@@ -11,7 +11,11 @@ This can be changed by replacing `grep` with
 Likewise, searches use regular expressions; this may cause unexpected behavior
 if your search term includes characters such as `.`.
 This behavior can be changed by adding ` -F` after `grep`,
-with or without `-i`.
+with or without `-i`.  
+Furthermore, more context around matches can be provided by adding
+`-A [number]` or `-B [number]` or `-C [umber]` after `grep`.  
+The line beginning with `rm` deletes the files showing the matching lines;
+those files can be kept by deleting that lines or commenting out with `#`.  
 Program stores curled file as html, based on url and date.  
   
 ## dependencies
